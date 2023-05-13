@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.animate-splash-top {
+  animation: splash-top 3s ease-out forwards;
+}
+
+.animate-splash-bottom {
+  animation: splash-bottom 3s ease-out forwards;
+}
+
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #d1cdcd;
+  z-index: 9999;
+}
+
+.splash-screen-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.button-container {
+  position: relative;
+  z-index: 10000;
+}
+
+
+@keyframes splash-top {
+  0% {
+    transform: scaleY(1);
+    transform-origin: top;
+
+  }
+
+  50% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: top;
+
+  }
+}
+
+@keyframes splash-bottom {
+  0% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+
+  }
+
+  50% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+
+
+
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+
+  }
+}
+
+.Logo {
+  animation-name: spin;
+  animation-duration: .5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .flex {
+    flex: 1 1 100%;
+    margin-bottom: 10px;
+  }
+
+  .text-white {
+    font-size: 14px;
+  }
+
+  .hover\:text-gray-300:hover {
+    color: #ccc;
+  }
+
+  .px-3 {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+a.home-link {
+  position: absolute;
+  /* adjust as needed */
+  top: -20px;
+  /* adjust as needed */
+
+  left: calc(50% - 38px);
+  /* half the width of the button */
+  width: 76px;
+  /* adjust as needed */
+  height: 76px;
+  /* adjust as needed */
+  border-radius: 50%;
+  background-color: white;
+  color: #4b5563;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1400;
+}
+
+a.home-link:hover {
+  background-color: #f9fafb;
+}
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('/fonts/DancingScript-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alegreya';
+  src: url('/fonts/AlegreyaSans-Light') format('truetype');
+}
