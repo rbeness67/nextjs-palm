@@ -1,0 +1,10 @@
+.parallaxContainer {
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.parallax {
+    transform-style: preserve-3d;
+    will-change: transform;
+}
